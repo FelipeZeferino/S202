@@ -34,7 +34,7 @@ const blancDoc = [
 async function update(doc, client) {
   console.log("Sensor: " + doc.nomeSensor + " temperatura: " + doc.valorSensor)
   if(doc.valorSensor > 38){
-    console.log("Temperatura muito alta!")
+    console.log("Temperatura muito alta! Verificar sensor " + doc.nomeSensor)
     doc.sensorAlarmado = true
   }
    await client.updateOne(
