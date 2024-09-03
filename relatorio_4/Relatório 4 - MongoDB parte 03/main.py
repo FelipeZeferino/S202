@@ -1,8 +1,15 @@
 from database import Database
 from helper.writeAJson import writeAJson
+from agreggations import ProductAnalyzer
 
 db = Database(database="mercado", collection="compras")
 db.resetDatabase()
+
+classe = ProductAnalyzer()
+classe.ProdutoMaisVendido()
+classe.ClienteMaisGastou()
+classe.ListaAcimaDe1Vendido()
+classe.totalVendasPorDia()
 
 # 1- Média de gasto total:
 # result = db.collection.aggregate([
