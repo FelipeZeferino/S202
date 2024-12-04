@@ -1,6 +1,5 @@
 import mongoose from 'mongoose'
 const { Schema, model } = mongoose;
-// import { uri } from '../utils/consts.js'
 
 const commentSchema = new Schema({
     username: { type: String, required: false },
@@ -19,11 +18,3 @@ const postSchema = new Schema({
 const Post = model('Post', postSchema)
 
 export { Post };
-
-
-
-// mongoose.connect(uri)
-//     .then(() => console.log('Connected to MongoDB'))
-//     .catch(err => console.error('Failed to connect to MongoDB', err))
-//     .finally(() => mongoose.connection.close());
-  

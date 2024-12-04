@@ -39,13 +39,14 @@ app.get('/', async (req, res) => {
     }
 })
 
-app.get('/post', async (req, res) => {
+app.get('/post/:id', async (req, res) => {
     try {
-        if(!req.body.title)
+        const postId = req.params.id;
+        if (!postId) {
             return res.status(404).send('Post not found');
-        let postTitle = req.body.title;
-        let posts = await postsDao.readPostByTitle(postTitle);
-        console.log(posts);
+        }
+        let posts = await postsDao.readPostById(postId);
+
         res.status(200).send(JSON.stringify(posts));
     } catch (error) {
         res.status(500).send({ message: 'Erro ao buscar posts', error });

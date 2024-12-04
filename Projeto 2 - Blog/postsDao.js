@@ -32,12 +32,9 @@ export class postsDAO {
         }
     }
     
-    
-
       async readAllPosts() {
         try {
           const posts = await Post.find({});
-      
           return posts;
         } catch (error) {
           console.error("Error reading all posts:", error);
@@ -45,13 +42,13 @@ export class postsDAO {
         }
       }
 
-    async readPostByTitle(title) {
+    async readPostById(id) {  
       try {
-        const post = await Post.find({ title: title });
+        const post = await Post.findOne({ _id: id });
         if (post) {
-        console.log(`Post com o título ${title}: `, post);
+        console.log(`Post com o título ${id}: `, post);
         } else {
-        console.log(`Nenhum post encontrado com o título ${title}`);
+        console.log(`Nenhum post encontrado com o título ${id}`);
         }
         return post;
       } catch (error) {
@@ -78,7 +75,6 @@ export class postsDAO {
             console.error(error)
         }
     }
-
 
     async deletePostById(post_id) {
       try {
