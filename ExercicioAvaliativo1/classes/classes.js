@@ -1,5 +1,3 @@
-import { MotoristaDAO } from "./motoristaDAO.js";
-
 class Motorista {
     constructor(name, cpf, rating, corridas) {
         this.name = name;

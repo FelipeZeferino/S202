@@ -1,0 +1,16 @@
+{
+  "host": "a162d872-7458-4117-870a-e6ceeb67d04e-eu-west-1.db.astra.datastax.com",
+  "port": 29080,
+  "cql_port": 29042,
+  "keyspace": "iot_space",
+  "localDC": "eu-west-1",
+  "caCertLocation": "./ca.crt",
+  "keyLocation": "./key",
+  "certLocation": "./cert",
+  "keyStoreLocation": "./identity.jks",
+  "keyStorePassword": "VSA4CIo8R1nm3PD6Y",
+  "trustStoreLocation": "./trustStore.jks",
+  "trustStorePassword": "L4smvwI9ZXAp0E67N",
+  "csvLocation": "./data",
+  "pfxCertPassword": "7R4XPFu5xDtM1jE6B"
+}

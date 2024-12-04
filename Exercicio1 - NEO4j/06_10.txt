@@ -1,0 +1,40 @@
+1.
+MATCH (n)
+return n;
+
+2.
+MATCH (jogo:Game)
+WHERE jogo.ano >= 2012
+return jogo;
+
+
+3.
+MATCH (jogo:Game {genero: "Terror"})
+RETURN jogo
+
+4.
+MATCH (j:Jurado)-[r:JOGOU]->(g:Game)
+WHERE r.nota >= 7
+RETURN g
+
+
+QUESTAO 2:
+1.
+CREATE(g:Game{titulo:'Counter Strike 2',genero:'Shooter',ano:2023});
+CREATE(g:Game{titulo:'Red Dead Redemption 2',genero:'Survival',ano:2018});
+CREATE(g:Game{titulo:'Outer Wilds',genero:'Shooter',ano:2019});
+
+2.
+CREATE(j:Jurado{nome:'Felipe'});
+CREATE(j:Jurado{nome:'Rafael'});
+CREATE(j:Jurado{nome:'Gustavo'});
+
+3.
+MATCH(j:Jurado{nome:'Gustavo'}),(g:Game{titulo:'Counter Strike 2'})
+CREATE(j)-[:JOGOU{nota:10, horas: 2500}]->(g);
+
+MATCH(j:Jurado{nome:'Rafael'}),(g:Game{titulo:'Red Dead Redemption 2'})
+CREATE(j)-[:JOGOU{nota:10, horas: 250}]->(g);
+
+MATCH(j:Jurado{nome:'Gustavo'}),(g:Game{titulo:'League of Legends'})
+CREATE(j)-[:JOGOU{nota:8, horas: 7000}]->(g);
